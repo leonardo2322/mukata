@@ -26,8 +26,8 @@ h1, h3{
 
 
 body{
+    background-color: #ffdead;
 
-    background: var(--backg); 
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -41,16 +41,8 @@ html{
     font-size: 62.5%;
     overflow-x: hidden;
 }
-html::-webkit-scrollbar{
-    width: 1.4rem;
-}
-html::-webkit-scrollbar-track{
-    background: #333;
-}
 
-html::-webkit-scrollbar-thumb{
-    background-color: var(--brown);
-}
+
 
 .cont-F{
     display: flex;
@@ -134,7 +126,7 @@ html::-webkit-scrollbar-thumb{
     letter-spacing: .2rem;
     line-height: 3rem;
     margin-bottom: 3rem;
-    color: #ff8c00;
+    color: #df7d05;
 }
 .about h1{
     font-size: 3rem;
@@ -289,6 +281,62 @@ html::-webkit-scrollbar-thumb{
     top:-415rem;
     width: 100%;
 }
+/* estilizacioon elementos dentro ul */
+input:disabled{
+    background: transparent;
+    font-size: 2.3rem;
+    color: #000;
+    text-align: center;
+}
+.espcification input{
+    width: 45%;
+    padding: 1.25rem;
+    border-left: 3px solid rgba(255,0,0,0.8);
+    background: transparent;
+    margin: 1rem 1rem;
+}
+
+.espcification input:focus{
+    background: rgba(0,0,0,.1);
+    border-bottom: 3px solid rgba(255,0,0,0.8);
+    border-left: none;
+}
+.espcification input::placeholder{
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: rgb(255,0,0);
+}
+
+.about p{
+    font-size: 2rem;
+    margin: 3rem;
+}
+#changedrink{
+    border-left: 3px solid rgba(255,0,0,0.8);
+    margin-left: 20px;
+    padding: 0.5rem;
+    background: transparent;
+    font-size: 1.8rem;
+    color: rgb(255,0,0);
+    text-align: left;
+}
+#changedrink:focus{
+    background: rgba(0,0,0,.1);
+    border-bottom: 3px solid rgba(255,0,0,0.8);
+    border-left: none;
+}
+li{
+    font-size: 2rem;
+    margin: 1.4rem;
+}
+
+.containDrinkselect .drinkSelectL{
+    display: block;
+}
+
+.containDrinkselect .drinkSelectM{
+    display:block;
+}
 /* end about position */
  @media (max-width:1998px){
      .container{
@@ -301,8 +349,12 @@ html::-webkit-scrollbar-thumb{
     html{
         font-size: 55%;
     }
+
     #burg-menu{
         display: block;
+    }
+    #burg-menu:hover{
+        color: var(--yellow);
     }
     .navbar{
         display: none;
