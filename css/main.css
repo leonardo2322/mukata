@@ -349,6 +349,14 @@ li{
     html{
         font-size: 55%;
     }
+    .espcification input{
+        font-size: 1.2rem;
+        width: 85%;
+    }
+    #changedrink{
+        width: 90%;
+        font-weight: 400;
+    }
 
     #burg-menu{
         display: block;
