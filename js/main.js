@@ -12,7 +12,6 @@ const breakfastcontainer = document.querySelector('#breakfasts')
 const btnespecials = document.querySelector('.show-menu2')
 const contEspecials = document.querySelector('.btn-group2')
 const containEspecials =document.querySelector('#Especials')
-
 // cuarto grupo
 const btnSencillos = document.querySelector('.show-menu3')
 const contSencillos = document.querySelector('.btn-group3')
@@ -105,6 +104,90 @@ class Carrito{
 
         this.carritoInsert(producto)
     }
+    else if (e.target.classList.contains('esp')){
+      e.preventDefault()
+      let node = e.target.parentElement.parentElement
+      let nodos = node.childNodes
+      let plate = nodos[1].textContent
+      let price = nodos[3].childNodes[0].childNodes[1].value
+      let especification = nodos[5].childNodes[1].value
+      let bLimonada = document.getElementById('Limonada')
+      let bClaro = document.getElementById('Claro')
+      let bMazamorra = document.getElementById('Mazamorra')
+      let bJugo = document.getElementById('jugo_Del_dia')
+      let otherDrink =nodos[9].childNodes[2].value
+      let meat = nodos[11].childNodes[2].value
+
+
+      if (otherDrink === '' && especification === '') {
+              
+        producto[4]= ''
+        producto[3]= 'el plato como viene'
+      }else{
+        producto[3]=especification
+        producto[4]=otherDrink
+  
+        nodos[9].childNodes[2].value =""
+        nodos[5].childNodes[1].value = ""
+      }
+      producto[0]=plate;
+      producto[2]=price
+      producto[1]=meat
+
+      if (bLimonada.checked){
+        producto[5]=bLimonada.id
+      }else if (bClaro.checked){
+        producto[5]=bClaro.id
+      }else if (bMazamorra.checked){
+        producto[5]=bMazamorra.id
+      }else if(bJugo.checked){
+        producto[5]=bJugo.id
+      }else{
+        producto[5]=''
+      }
+      this.carritoInsertdontesp(producto)
+
+    }
+    else if (e.target.classList.contains('bpaisa')){
+      e.preventDefault()
+      let node = e.target.parentElement.parentElement
+      let nodos = node.childNodes
+      let plate = nodos[1].textContent
+      let price = nodos[3].childNodes[0].childNodes[1].value
+      let especification = nodos[5].childNodes[1].value
+      let bLimonada = document.getElementById('limonada')
+      let bClaro = document.getElementById('claro')
+      let bMazamorra = document.getElementById('mazamorra')
+      let bJugo = document.getElementById('jugo_del_dia')
+      let otherDrink =nodos[9].childNodes[2].value
+
+      if (otherDrink === '' && especification === '') {
+              
+        producto[3]= ''
+        producto[2]= 'el plato como viene'
+      }else{
+        producto[2]=especification
+        producto[3]=otherDrink
+  
+        nodos[9].childNodes[2].value =""
+        nodos[5].childNodes[1].value = ""
+      }
+      if (bLimonada.checked){
+        producto[4]=bLimonada.id
+      }else if (bClaro.checked){
+        producto[4]=bClaro.id
+      }else if (bMazamorra.checked){
+        producto[4]=bMazamorra.id
+      }else if(bJugo.checked){
+        producto[4]=bJugo.id
+      }else{
+        producto[4]='esta'
+      }
+      producto[0]=plate;
+      producto[1]=price
+      console.log(bMazamorra.checked)
+      this.carritoInsert(producto)
+    }
     else if (e.target.classList.contains('shopp')){
       e.preventDefault()
       let element =e.target.parentElement.parentElement
@@ -149,12 +232,30 @@ class Carrito{
     let constructor = document.createElement('div')
     constructor.classList.add('div-shop')
     constructor.innerHTML =`
-    <h3 class="datosagregados">${tipo[0]}</h3>
-    <h3 class="datosagregados">${tipo[1]}</h3>
-    <h3 class="datosagregados">${tipo[2]}</h3>
-    <h3 class="datosagregados">${tipo[3]}</h3> 
+    <p class="datosagregados">${tipo[0]}</p>
+    <p class="datosagregados">${tipo[1]}</p>
+    <p class="datosagregados">${tipo[2]}</p>
+    <p class="datosagregados">${tipo[3]}</p> 
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
+    <div class="line"></div>
     `
+    carshopping.appendChild(constructor)
+  }
+  carritoInsertdontesp(tipo){
+    const carshopping = document.querySelector('.contain')
+    let constructor = document.createElement('div')
+    constructor.classList.add('div-shop')
+    constructor.innerHTML =`
+    <p class="datosagregados">${tipo[0]}</p>
+    <p class="datosagregados">${tipo[1]}</p>
+    <p class="datosagregados">${tipo[2]}</p>
+    <p class="datosagregados">${tipo[3]}</p> 
+    <p class="datosagregados">${tipo[4]}</p> 
+    <p class="datosagregados">${tipo[5]}</p>
+    <span class="circle-x"><i class="fas fa-times-circle"></i></span>
+    <div class="line"></div>
+    `
+
     carshopping.appendChild(constructor)
   }
   carritoInsert(tipo){
@@ -162,12 +263,13 @@ class Carrito{
     let constructor = document.createElement('div')
     constructor.classList.add('div-shop')
     constructor.innerHTML =`
-    <h3 class="datosagregados">${tipo[0]}</h3>
-    <h3 class="datosagregados">${tipo[1]}</h3>
-    <h3 class="datosagregados">${tipo[2]}</h3>
-    <h3 class="datosagregados">${tipo[3]}</h3>
-    <h3 class="datosagregados">${tipo[4]}</h3>
+    <p class="datosagregados">${tipo[0]}</p>
+    <p class="datosagregados">${tipo[1]}</p>
+    <p class="datosagregados">${tipo[2]}</p>
+    <p class="datosagregados">${tipo[3]}</p>
+    <p class="datosagregados">${tipo[4]}</p>
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
+    <div class="line"></div>
     `
     carshopping.appendChild(constructor)
   }
@@ -357,7 +459,7 @@ btnBebidas.addEventListener('click',(e)=>{
     contBandejas.classList.remove('btn-group-show4')
     contPorciones.classList.remove('btn-group-show6')
 
-    containerPorciones.style.top = "-365rem"
+    containerPorciones.style.top = "-305rem"
 }else{
   contBebidas.classList.remove('btn-group-show5')
   
@@ -388,3 +490,4 @@ btnPorciones.addEventListener('click',(e)=>{
 // function end
 contenedor.addEventListener('click', (e)=>{carrito.compra(e)})
 contenedordayMenu.addEventListener('click',(e)=>{carrito.compra(e)})
+containEspecials.addEventListener('click',(e)=>{carrito.compra(e)})

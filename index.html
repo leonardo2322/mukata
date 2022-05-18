@@ -29,7 +29,7 @@
         <a href="#" class="logo" ><img src="./img/logo-img.png" alt=""></a> 
 
         <span id="burg-menu" class="fas fa-shopping-cart"></span>
-
+        <!-- <span>Su compra</span> -->
 
 
     </header>
@@ -43,6 +43,7 @@
         <hr>
         <div class="contain"></div>
         <div class="btns">
+            <h2 class="totalCompra">Total De la compra: </h2>
             <a href="#" class="btn-show">Vaciar Carrito</a>
             <a href="#" class="btn-show">Realizar compra</a>
         </div>
@@ -57,10 +58,11 @@
     <section>
 
     <!-- start sections menu -->
- 
+    <img class="imgpq" src="./img/th-831920930-removebg-preview.png" alt="">
     <section class="container">
         <h1 class="menu-btn">Menu de Platos</h1>
 
+        <img class="imgpq2" src="./img/th-3183955746-removebg-preview.png" alt="">
         <section class="about" id="daymenu">
             <h1 class="menu-btn">menu del dia</h1>
 
@@ -245,7 +247,7 @@
                             <div class="drinkSelect"><label for="Claro">Claro</label><input type="radio" name="Ebebida" id="Claro"></div>
 
                             <div class="drinkSelectM"><label for="Mazamorra">Mazamorra</label><input type="radio" name="Ebebida" id="Mazamorra"></div>
-                            <div class="Milk">Con leche Marque aqui<input type="checkbox" name="leche" id="leche"></div>
+                            <div class="Milk">jugo del dia<input type="radio" name="Ebebida" id="jugo_Del_dia"></div>
                         </li>
 
                         <li>si desea otra Bebida Presione aqui <input class="drink" type="checkbox" name="other-drink" id=""><input type="text" name="" id="changedrink" placeholder="que bebida desea" disabled></li>
@@ -261,33 +263,33 @@
                                 <option value="Especial de Bagre">Especial de Bagre</option>
                             </select>
                         </li>
-                        <li><a href="#" class="btn-show shopp meat">Agrepar A la compra</a></li>
+                        <li><a href="#" class="btn-show shopp esp">Agrepar A la compra</a></li>
 
                      
                     </ul>
 
                     <ul class="dropdown-menu" data-id="1" role="menu">
 
-                        <li><h2 class="menu-btn">Molida, chicharron, chorizo, Agucate,  Arroz, Frijoles,Huevo Frito, Tajada Madura, Ensalada, Papa y yuca </h2></li>
+                        <li><h2 class="menu-btn">Tipica Paisa, Molida, chicharron, chorizo, Agucate,  Arroz, Frijoles,Huevo Frito, Tajada Madura, Ensalada, Papa y yuca </h2></li>
 
                         <li><span>Precio: <input type="text" value="18000" disabled> $</span></li>
 
                         <li class="espcification"><span>alguna especificacion: </span><input type="text" placeholder="Escriba que desea cambiar del plato" value="" ></li>
 
                         <li class="containDrinkselect">Que bebida desea: 
-                            <div class="drinkSelectL"><label for="Limonada">Limonada</label><input type="radio" name="Ebebida" id="Limonada"></div>
+                            <div class="drinkSelectL"><label for="limonada">Limonada</label><input type="radio" name="Ebebida2" id="limonada"></div>
 
-                            <div class="drinkSelect"><label for="Claro">Claro</label><input type="radio" name="Ebebida" id="Claro"></div>
+                            <div class="drinkSelect"><label for="claro">Claro</label><input type="radio" name="Ebebida2" id="claro"></div>
 
-                            <div class="drinkSelectM"><label for="Mazamorra">Mazamorra</label><input type="radio" name="Ebebida" id="Mazamorra"></div>
-                            <div class="Milk">Con leche Marque aqui<input type="checkbox" name="leche" id="leche"></div>
+                            <div class="drinkSelectM"><label for="mazamorra">Mazamorra</label><input type="radio" name="Ebebida2" id="mazamorra"></div>
+                            <div class="Milk">jugo del dia<input type="radio" name="Ebebida2" id="jugo_del_dia"></div>
                         </li>
 
                         <li>si desea otra Bebida Presione aqui <input class="drink" type="checkbox" name="other-drink" id=""><input type="text" name="" id="changedrink" placeholder="que bebida desea" disabled></li>
 
 
 
-                        <li><a href="#" class="btn-show shopp" >Agrepar A la compra</a></li>
+                        <li><a href="#" class="btn-show shopp bpaisa" >Agrepar A la compra</a></li>
                     </ul>
                     <a href="#" class="Portion btn-show">Agregar Una porcion</a>
               </div>
@@ -320,13 +322,13 @@
                             <div class="drinkSelect"><label for="Claro">Claro</label><input type="radio" name="Ebebida" id="Claro"></div>
 
                             <div class="drinkSelectM"><label for="Mazamorra">Mazamorra</label><input type="radio" name="Ebebida" id="Mazamorra"></div>
-                            <div class="Milk">Con leche Marque aqui<input type="checkbox" name="leche" id="leche"></div>
+                            <div class="Milk">Jugo del dia<input type="checkbox" name="leche" id="leche"></div>
                         </li>
 
 
                         <li>si desea otra Bebida Presione aqui <input class="drink" type="checkbox" name="other-drink" id=""><input type="text" name="" id="changedrink" placeholder="que bebida desea" disabled></li>
 
-                        <li><span>Elija La sopa</span>  <label for="Crema">Crema</label><input type="radio" name="sopa" id="Crema"><label for="Deldia">Del dia</label><input type="radio" name="sopa" id="Deldia"></li>
+                        <li><span>Elija</span>  <label for="Crema">Crema</label><input type="radio" name="sopa" id="Crema"><label for="Deldia">o Sopa</label><input type="radio" name="sopa" id="Deldia"></li>
 
                         <li><span>Elija La Carne</span>
                             <select name="carnes" id="carnes" >
@@ -458,7 +460,7 @@
                         <li><label for="CocaColalitroycuarto">Coca Cola litro y cuarto</label><input type="checkbox" name="bebidas[]" id="CocaColalitroycuarto"><input type="text" name="precio" value="5000" id="precio" disabled></li>
 
 
-                        <li><label for="Cerveza">Cerveza</label><input type="checkbox" name="bebidas[]" id="Cerveza"><input type="text" name="precio" value="4000" id="precio" disabled><input type="text" name="cerveza" id="" placeholder="Que cerveza desea"></li>
+                        <li><label for="Cerveza">Cerveza</label><input type="checkbox" name="bebidas[]" id="Cerveza"><input type="text" name="precio" value="4000" id="precio" disabled><input type="text" class="cervezainput" name="cerveza" id="nameCerveza" placeholder="Que cerveza desea"></li>
 
                         <li><label for="Agua">Agua</label><input type="checkbox" name="bebidas[]" id="Agua"><input type="text" name="precio" value="2500" id="precio" disabled></li>
 
@@ -556,6 +558,15 @@
               </div>
 
         </section>
+
+        <section class="direction">
+            <iframe class="mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.806026568397!2d-75.5846491852312!3d6.156728295542471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaf6954a891d669f!2zNsKwMDknMjQuMiJOIDc1wrAzNCc1Ni45Ilc!5e0!3m2!1ses!2sco!4v1649609426355!5m2!1ses!2sco"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        </section>
     </section>
     
     <section class="footer">
@@ -564,7 +575,7 @@
             <div class="credit"> Creado Por <abbr title="Pagina Web Creada Por Paper`s.Coop"><span> <a
                             href="https://leonardo2322.github.io/Paper/">Paper`S.Coop</a> </span></abbr> | <span
                     class="copy">&copy;</span> Todos Los Derechos
-                Reservados - <span class="politica"> <a href="/html/politicas-privacidad.html" target="_blank">Politicas de
+                Reservados - <span class="politica"> <a href="./html/politicas-privacidad.html" target="_blank">Politicas de
                         privacidad</a></span>
             </div>
 

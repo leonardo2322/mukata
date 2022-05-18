@@ -158,10 +158,11 @@ html{
     width: 100%;
     /* height: 100%; */
     display: block;
+    margin-top: 1.2rem;
+
 }
 .navbar .contain{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 
@@ -170,11 +171,27 @@ html{
 .navbar .contain .datosagregados{
     display: inline;
     margin-left: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.8px;
+    font-size: 1.3rem;
+}
+.line{
+    border-top: 1px dot #000;
+    height: 2px;
+    width: 100%;
+    padding: 0;
+
 }
 .navbar .contain .circle-x{
     font-size: 2rem;
     color: #009698;
     cursor: pointer;
+}
+.navbar .totalCompra{
+    position: relative;
+    left: -10rem;
+    margin-top: 2rem;
 }
 .navbar .btns a{
     display: block;
@@ -197,9 +214,9 @@ html{
 }
 .navbar .btns{
     width: 100%;
-    
+    /* position: relative;
+    top: -17rem; */
     text-align: center;
-    margin-bottom: 2rem;
 }
 
  /* clip path mostrar el menu */
@@ -249,6 +266,23 @@ html{
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
  }
   /* container de shopping cart */
+  /* imagenes background */
+  .imgpq{
+      width: 10rem;
+      z-index: -1000;
+      position: fixed;
+      left: 22rem;
+      top: 30rem;
+      transform: rotate(30deg);
+  }
+  .imgpq2{
+      width: 5rem;
+      z-index: -1000;
+      position: fixed;
+      left:0.5rem;
+      transform: rotate(15deg);
+
+  }
 /* superposicionar los about  inicio*/
 
 #breakfasts{
@@ -417,6 +451,12 @@ li{
     html{
         font-size: 55%;
     }
+    .mapa{
+        width: 80%;
+        height:400px;
+        position: relative;
+        top: -370rem;
+    }
     .espcification input{
         font-size: 1.2rem;
         width: 85%;
@@ -454,16 +494,16 @@ li{
     }
 
     .navbar ul li{
-        margin:1.5rem 2rem;
+        margin:1.5rem 0.5rem;
     }
     .navbar ul li{
         display: inline;
         color: var(--brown);
         
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         border-left: .2rem solid var(--brown);
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     .navbar ul li a:hover,
@@ -472,7 +512,8 @@ li{
         border-color: #333;
     }
     .container{
-        top: 75vh;
+        top: 90vh;
+        height: 1000px;
     }
     .fa-times{
         transform: rotate(90deg);
@@ -480,4 +521,20 @@ li{
     .navtoggle{
         display: none;
     }
+    .cervezainput{
+        background-color: transparent;
+        font-size: 1.7rem;
+        border-left: 3px solid rgba(255,0,0,0.8);
+        font-weight: 300;
+        padding: 1.25rem;
+    }
+    .cervezainput::placeholder{
+        color: #ff0800;
+    }
+    .cervezainput:focus{
+        background: rgba(0,0,0,.1);
+        border-bottom: 3px solid rgba(255,0,0,0.8);
+        border-left: none;
+    }
+    
 }
