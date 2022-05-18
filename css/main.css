@@ -176,8 +176,8 @@ html{
     letter-spacing: 0.8px;
     font-size: 1.3rem;
 }
-.line{
-    border-top: 1px dot #000;
+.navbar .line{
+    border-top: 1px dotted #000;
     height: 2px;
     width: 100%;
     padding: 0;
@@ -190,7 +190,7 @@ html{
 }
 .navbar .totalCompra{
     position: relative;
-    left: -10rem;
+    left: -5rem;
     margin-top: 2rem;
 }
 .navbar .btns a{
