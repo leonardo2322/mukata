@@ -172,9 +172,53 @@ class Carrito{
         nodos[9].childNodes[2].value =""
         nodos[5].childNodes[1].value = ""
       }
+      if (bLimonada.check){
+        producto[4]=bLimonada.id
+      }else if (bClaro.check){
+        producto[4]=bClaro.id
+      }else if (bMazamorra.check){
+        producto[4]=bMazamorra.id
+      }else if(bJugo.check){
+        producto[4]=bJugo.id
+      }else{
+        producto[4]='esta'
+      }
+      producto[0]=plate;
+      producto[1]=price
+      this.carritoInsert(producto)
+    }
+    else if (e.target.classList.contains('sen')){
+      e.preventDefault()
+
+      let node = e.target.parentElement.parentElement
+      let nodos = node.childNodes
+      let plate = nodos[1].textContent
+      let price = nodos[3].childNodes[0].childNodes[1].value
+      let especification = nodos[5].childNodes[1].value
+      let bLimonada = document.getElementById('lImonada')
+      let bClaro = document.getElementById('cLaro')
+      let bMazamorra = document.getElementById('mAzamorra')
+      let bJugo = document.getElementById('jUgodeldia')
+      let otherDrink =nodos[9].childNodes[2].value
+      let creme = nodos[11].childNodes[2].outerText
+      let meat = nodos[13].childNodes[2].value
+      let soup = nodos[11].childNodes[5].id
+  
+      if (otherDrink === '' && especification === '') {
+              
+        producto[3]= ''
+        producto[2]= 'el plato como viene'
+      }else{
+        producto[2]=especification
+        producto[3]=otherDrink
+  
+        nodos[9].childNodes[2].value =""
+        nodos[5].childNodes[1].value = ""
+      }
       if (bLimonada.checked){
         producto[4]=bLimonada.id
       }else if (bClaro.checked){
+        delete producto[4]
         producto[4]=bClaro.id
       }else if (bMazamorra.checked){
         producto[4]=bMazamorra.id
@@ -183,10 +227,17 @@ class Carrito{
       }else{
         producto[4]='esta'
       }
+      if (nodos[11].childNodes[3].checked) {
+        producto[5]=creme
+      }else if (nodos[11].childNodes[5].checked){
+        producto[5]=soup
+      }else{
+        producto[5]='cualquier sopa'
+      }
       producto[0]=plate;
       producto[1]=price
-      console.log(bMazamorra.checked)
-      this.carritoInsert(producto)
+      producto[6]=meat
+      this.carritoInsertdontsen(producto)
     }
     else if (e.target.classList.contains('shopp')){
       e.preventDefault()
@@ -252,6 +303,24 @@ class Carrito{
     <p class="datosagregados">${tipo[3]}</p> 
     <p class="datosagregados">${tipo[4]}</p> 
     <p class="datosagregados">${tipo[5]}</p>
+    <span class="circle-x"><i class="fas fa-times-circle"></i></span>
+    <div class="line"></div>
+    `
+
+    carshopping.appendChild(constructor)
+  }
+  carritoInsertdontsen(tipo){
+    const carshopping = document.querySelector('.contain')
+    let constructor = document.createElement('div')
+    constructor.classList.add('div-shop')
+    constructor.innerHTML =`
+    <p class="datosagregados">${tipo[0]}</p>
+    <p class="datosagregados">${tipo[1]}</p>
+    <p class="datosagregados">${tipo[2]}</p>
+    <p class="datosagregados">${tipo[3]}</p> 
+    <p class="datosagregados">${tipo[4]}</p> 
+    <p class="datosagregados">${tipo[5]}</p>
+    <p class="datosagregados">${tipo[6]}</p>
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
     <div class="line"></div>
     `
@@ -410,7 +479,7 @@ btnSencillos.addEventListener('click',(e)=>{
     contPorciones.classList.remove('btn-group-show6')
 
     containerBandejas.style.top = "-255rem"
-    containerBebidas.style.top = "-330rem"
+    containerBebidas.style.top = "-370rem"
     containerPorciones.style.top = "-390rem"
 }else{
   contSencillos.classList.remove('btn-group-show3')
@@ -491,3 +560,4 @@ btnPorciones.addEventListener('click',(e)=>{
 contenedor.addEventListener('click', (e)=>{carrito.compra(e)})
 contenedordayMenu.addEventListener('click',(e)=>{carrito.compra(e)})
 containEspecials.addEventListener('click',(e)=>{carrito.compra(e)})
+containerSencillos.addEventListener('click',(e)=>{carrito.compra(e)})

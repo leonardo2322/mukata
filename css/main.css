@@ -271,7 +271,7 @@ html{
       width: 10rem;
       z-index: -1000;
       position: fixed;
-      left: 22rem;
+      left: 28rem;
       top: 30rem;
       transform: rotate(30deg);
   }
@@ -282,6 +282,10 @@ html{
       left:0.5rem;
       transform: rotate(15deg);
 
+  }
+  .imgpq3{
+      width: 5re;
+      
   }
 /* superposicionar los about  inicio*/
 
