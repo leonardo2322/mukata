@@ -312,7 +312,6 @@ class Carrito{
     let price = nodos[3].childNodes[0].childNodes[1].value
     let especification = nodos[5].childNodes[1].value
     let otherDrink =nodos[9].childNodes[2].value
-    console.log(plate,price,especification,otherDrink,nodos[7].childNodes[1].checked)
     if (otherDrink === '' && especification === '') {
               
       producto[3]= 'chocolate sin leche'
@@ -489,7 +488,6 @@ btnespecials.addEventListener('click',(e)=>{
     contEspecials.classList.add('btn-group-show2')
 
     if (containEspecials.style.top == "-45rem") {
-      console.log('aqui')
       containEspecials.style.top = "-165rem"
 
     }
@@ -520,7 +518,6 @@ btnSencillos.addEventListener('click',(e)=>{
     contSencillos.classList.add('btn-group-show3')
 
     if (containerSencillos.style.top == "-175rem") {
-      console.log('aqui')
       containerSencillos.style.top = "-235rem"
 
     }
@@ -619,12 +616,15 @@ btnCompra.addEventListener('click',()=>{
     alert('debes agregar productos a tu compra dirigete a las secciones y preciona agregar')
   }else{
     let compraARealizar = ""
+    let reg =  /\\n/
     carshopping.childNodes.forEach((e)=>{
      
      compraARealizar += e.textContent
     })
-    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${compraARealizar}`
+    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, " ")
+    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${newtext}`
     btnCompra.setAttribute('href',`${what}`)
+    
   }
 
 })
