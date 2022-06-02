@@ -618,13 +618,13 @@ btnCompra.addEventListener('click',()=>{
   if (carshopping.childNodes.length == 0){
     alert('debes agregar productos a tu compra dirigete a las secciones y preciona agregar')
   }else{
-
-    carshopping.childNodes.forEach((e)=>{console.log(e.textContent)
-      let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${e.textContent}`
-
-      btnCompra.setAttribute('href',`${what}`)
+    let compraARealizar = ""
+    carshopping.childNodes.forEach((e)=>{
+     
+     compraARealizar += e.textContent
     })
-
+    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${compraARealizar}`
+    btnCompra.setAttribute('href',`${what}`)
   }
 
 })
