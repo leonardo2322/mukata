@@ -91,10 +91,13 @@ html{
     font-weight: 500;
 }
 #burg-menu{
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: #fff;
     cursor: pointer;
     display: none;
+}
+#burg-menu .fas{
+    font-size: 2.7rem;
 }
 
 .container{
@@ -479,7 +482,12 @@ li{
     }
     .cont-what{
         position: relative;
-        top: -368rem;
+        top: -360rem;
+    }
+
+    .Ncontact{
+        font-size: 3rem;
+        color: var(--red);
     }
     .espcification input{
         font-size: 1.2rem;

@@ -1,4 +1,4 @@
-const barsMenu = document.querySelector('#burg-menu')
+const barsMenu = document.querySelector('#burg-menu .fas')
 const navbar = document.querySelector('.navbar')
 // primer grupo
 const botnshow = document.querySelector('.show-menu')
@@ -143,7 +143,7 @@ class Carrito{
       }else if(bJugo.checked){
         producto[5]=bJugo.id
       }else{
-        producto[5]=''
+        producto[5]='cualquier bebida'
       }
       this.carritoInsertdontesp(producto)
 
@@ -155,10 +155,10 @@ class Carrito{
       let plate = nodos[1].textContent
       let price = nodos[3].childNodes[0].childNodes[1].value
       let especification = nodos[5].childNodes[1].value
-      let bLimonada = document.getElementById('limonada')
-      let bClaro = document.getElementById('claro')
-      let bMazamorra = document.getElementById('mazamorra')
-      let bJugo = document.getElementById('jugo_del_dia')
+      let bLimonada = document.getElementById('LimOnada')
+      let bClaro = document.getElementById('claRo')
+      let bMazamorra = document.getElementById('mazAmorra')
+      let bJugo = document.getElementById('jugOdeldia')
       let otherDrink =nodos[9].childNodes[2].value
 
       if (otherDrink === '' && especification === '') {
@@ -172,17 +172,18 @@ class Carrito{
         nodos[9].childNodes[2].value =""
         nodos[5].childNodes[1].value = ""
       }
-      if (bLimonada.check){
+      if (bLimonada.checked){
         producto[4]=bLimonada.id
-      }else if (bClaro.check){
+      }else if (bClaro.checked){
         producto[4]=bClaro.id
-      }else if (bMazamorra.check){
+      }else if (bMazamorra.checked){
         producto[4]=bMazamorra.id
-      }else if(bJugo.check){
+      }else if(bJugo.checked){
         producto[4]=bJugo.id
       }else{
-        producto[4]='esta'
+        producto[4]='cualquier bebida aqui'
       }
+
       producto[0]=plate;
       producto[1]=price
       this.carritoInsert(producto)
@@ -225,7 +226,59 @@ class Carrito{
       }else if(bJugo.checked){
         producto[4]=bJugo.id
       }else{
-        producto[4]='esta'
+        producto[4]='cualquier bebida'
+      }
+      if (nodos[11].childNodes[3].checked) {
+        producto[5]=creme
+      }else if (nodos[11].childNodes[5].checked){
+        producto[5]=soup
+      }else{
+        producto[5]='cualquier sopa'
+      }
+      producto[0]=plate;
+      producto[1]=price
+      producto[6]=meat
+      this.carritoInsertdontsen(producto)
+    }
+    else if (e.target.classList.contains('ban')) {
+      e.preventDefault()
+
+      let node = e.target.parentElement.parentElement
+      let nodos = node.childNodes
+      let plate = nodos[1].textContent
+      let price = nodos[3].childNodes[0].childNodes[1].value
+      let especification = nodos[5].childNodes[1].value
+      let bLimonada = document.getElementById('liMonada')
+      let bClaro = document.getElementById('clAro')
+      let bMazamorra = document.getElementById('MaZamorra')
+      let bJugo = document.getElementById('juGodeldia')
+      let otherDrink =nodos[9].childNodes[2].value
+      let creme = nodos[11].childNodes[2].outerText
+      let meat = nodos[13].childNodes[2].value
+      let soup = nodos[11].childNodes[5].id
+  
+      if (otherDrink === '' && especification === '') {
+              
+        producto[3]= ''
+        producto[2]= 'el plato como viene'
+      }else{
+        producto[2]=especification
+        producto[3]=otherDrink
+  
+        nodos[9].childNodes[2].value =""
+        nodos[5].childNodes[1].value = ""
+      }
+      if (bLimonada.checked){
+        producto[4]=bLimonada.id
+      }else if (bClaro.checked){
+        delete producto[4]
+        producto[4]=bClaro.id
+      }else if (bMazamorra.checked){
+        producto[4]=bMazamorra.id
+      }else if(bJugo.checked){
+        producto[4]=bJugo.id
+      }else{
+        producto[4]='cualquier bebida'
       }
       if (nodos[11].childNodes[3].checked) {
         producto[5]=creme
@@ -245,6 +298,7 @@ class Carrito{
       this.send(element)
 
     }
+
 
   }
 
@@ -478,7 +532,7 @@ btnSencillos.addEventListener('click',(e)=>{
     contBebidas.classList.remove('btn-group-show5')
     contPorciones.classList.remove('btn-group-show6')
 
-    containerBandejas.style.top = "-255rem"
+    containerBandejas.style.top = "-245rem"
     containerBebidas.style.top = "-370rem"
     containerPorciones.style.top = "-390rem"
 }else{
@@ -557,7 +611,25 @@ btnPorciones.addEventListener('click',(e)=>{
   
   
 // function end
+const carshopping = document.querySelector('.contain')
+const btnCompra = document.querySelector('#comprar')
+
+btnCompra.addEventListener('click',()=>{
+  if (carshopping.childNodes.length == 0){
+    alert('debes agregar productos a tu compra dirigete a las secciones y preciona agregar')
+  }else{
+
+    carshopping.childNodes.forEach((e)=>{console.log(e.textContent)
+      let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${e.textContent}`
+
+      btnCompra.setAttribute('href',`${what}`)
+    })
+
+  }
+
+})
 contenedor.addEventListener('click', (e)=>{carrito.compra(e)})
 contenedordayMenu.addEventListener('click',(e)=>{carrito.compra(e)})
 containEspecials.addEventListener('click',(e)=>{carrito.compra(e)})
 containerSencillos.addEventListener('click',(e)=>{carrito.compra(e)})
+containerBandejas.addEventListener('click',(e)=>{carrito.compra(e)})
