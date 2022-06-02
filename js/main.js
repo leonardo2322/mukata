@@ -621,7 +621,7 @@ btnCompra.addEventListener('click',()=>{
      
      compraARealizar += e.textContent
     })
-    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, " ")
+    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, "+")
     let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${newtext}`
     btnCompra.setAttribute('href',`${what}`)
     
