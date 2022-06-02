@@ -610,7 +610,10 @@ btnPorciones.addEventListener('click',(e)=>{
 // function end
 const carshopping = document.querySelector('.contain')
 const btnCompra = document.querySelector('#comprar')
+const btnVaciarCarro = document.querySelector('#vaciar')
 
+btnVaciarCarro.addEventListener('click',()=>{while (carshopping.firstChild)
+  {carshopping.removeChild(carshopping.firstChild)}})
 btnCompra.addEventListener('click',()=>{
   if (carshopping.childNodes.length == 0){
     alert('debes agregar productos a tu compra dirigete a las secciones y preciona agregar')
