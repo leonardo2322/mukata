@@ -613,7 +613,8 @@ const btnCompra = document.querySelector('#comprar')
 const btnVaciarCarro = document.querySelector('#vaciar')
 
 btnVaciarCarro.addEventListener('click',()=>{while (carshopping.firstChild)
-  {carshopping.removeChild(carshopping.firstChild)}})
+  {carshopping.removeChild(carshopping.firstChild)}
+})
 btnCompra.addEventListener('click',()=>{
   if (carshopping.childNodes.length == 0){
     alert('debes agregar productos a tu compra dirigete a las secciones y preciona agregar')
@@ -622,12 +623,12 @@ btnCompra.addEventListener('click',()=>{
     let reg =  /\\n/
     carshopping.childNodes.forEach((e)=>{
      
-     compraARealizar += e.textContent
+     compraARealizar += e.textContent + 'sigue    '
     })
-    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, "--")
-    let textdontSpace = newtext.replace(/\s+/g, ",")
-    console.log(textdontSpace)
-    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${textdontSpace}`
+    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, " ")
+    // let textdontSpace = newtext.replace(/\s+/g, ",")
+    console.log(newtext)
+    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${newtext}`
     btnCompra.setAttribute('href',`${what}`)
     
   }
