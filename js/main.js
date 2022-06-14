@@ -155,10 +155,10 @@ class Carrito{
       let plate = nodos[1].textContent
       let price = nodos[3].childNodes[0].childNodes[1].value
       let especification = nodos[5].childNodes[1].value
-      let bLimonada = document.getElementById('LimOnada')
+      let bLimonada = document.getElementById('limonadA')
       let bClaro = document.getElementById('claRo')
-      let bMazamorra = document.getElementById('mazAmorra')
-      let bJugo = document.getElementById('jugOdeldia')
+      let bMazamorra = document.getElementById('mazamorrA')
+      let bJugo = document.getElementById('jugo_del_dIa')
       let otherDrink =nodos[9].childNodes[2].value
 
       if (otherDrink === '' && especification === '') {
@@ -172,6 +172,7 @@ class Carrito{
         nodos[9].childNodes[2].value =""
         nodos[5].childNodes[1].value = ""
       }
+      console.log(bClaro.checked)
       if (bLimonada.checked){
         producto[4]=bLimonada.id
       }else if (bClaro.checked){
@@ -181,7 +182,7 @@ class Carrito{
       }else if(bJugo.checked){
         producto[4]=bJugo.id
       }else{
-        producto[4]='cualquier bebida aqui'
+        producto[4]='cualquier bebida'
       }
 
       producto[0]=plate;
@@ -292,6 +293,62 @@ class Carrito{
       producto[6]=meat
       this.carritoInsertdontsen(producto)
     }
+    else if (e.target.classList.contains('dy')) {
+      e.preventDefault()
+      let node = e.target.parentElement.parentElement
+      let nodos = node.childNodes
+      let plate = nodos[1].textContent
+      let price = nodos[3].childNodes[0].childNodes[1].value
+      let especification = nodos[5].childNodes[1].value
+      if (document.getElementById('limoNada')){
+        var bLimonada = document.getElementById('limoNada')
+      }else if (document.getElementById('limOnAda')) {
+        var bLimonada = document.getElementById('limOnAda')
+      }else if (document.getElementById('limoNaDA')) {
+        var bLimonada = document.getElementById('limoNaDA')
+      }
+      
+      if (document.getElementById('claRO')) {
+        var bClaro = document.getElementById('claRO')
+      }else if (document.getElementById('cLarO')) {
+        var bClaro = document.getElementById('cLarO')
+      }else if (document.getElementById('CLARO')) {
+        var bClaro = document.getElementById('CLARO')
+      }
+      let bMazamorra = document.getElementById('Mazamorra')
+      let bJugo = document.getElementById('jugo_Del_dia')
+
+      let otherDrink =nodos[9].childNodes[2].value
+
+
+
+      if (otherDrink === '' && especification === '') {
+              
+        producto[3]= ''
+        producto[2]= 'el plato como viene'
+      }else{
+        producto[2]=especification
+        producto[3]=otherDrink
+  
+        nodos[9].childNodes[2].value =""
+        nodos[5].childNodes[1].value = ""
+      }
+      producto[0]=plate;
+      producto[1]=price
+
+      if (bLimonada.checked){
+        producto[4]=bLimonada.id
+      }else if (bClaro.checked){
+        producto[4]=bClaro.id
+      }else if (bMazamorra.checked){
+        producto[4]=bMazamorra.id
+      }else if(bJugo.checked){
+        producto[4]=bJugo.id
+      }else{
+        producto[4]='cualquier bebida'
+      }
+      this.carritoInsert(producto)
+    }
     else if (e.target.classList.contains('shopp')){
       e.preventDefault()
       let element =e.target.parentElement.parentElement
@@ -312,6 +369,7 @@ class Carrito{
     let price = nodos[3].childNodes[0].childNodes[1].value
     let especification = nodos[5].childNodes[1].value
     let otherDrink =nodos[9].childNodes[2].value
+
     if (otherDrink === '' && especification === '') {
               
       producto[3]= 'chocolate sin leche'
@@ -623,12 +681,11 @@ btnCompra.addEventListener('click',()=>{
     let reg =  /\\n/
     carshopping.childNodes.forEach((e)=>{
      
-     compraARealizar += e.textContent + 'sigue    '
+     compraARealizar += e.textContent + 'sigue'
     })
-    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, " ")
-    // let textdontSpace = newtext.replace(/\s+/g, ",")
-    console.log(newtext)
-    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${newtext}`
+    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, "_")
+    let textdontSpace = newtext.replace(/\s+/g, " ")
+    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${textdontSpace}`
     btnCompra.setAttribute('href',`${what}`)
     
   }
