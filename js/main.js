@@ -348,6 +348,8 @@ class Carrito{
         producto[4]='cualquier bebida'
       }
       this.carritoInsert(producto)
+    }else if (e.target.classList.contains('portions')) {
+      console.log("aqui continuar")
     }
     else if (e.target.classList.contains('shopp')){
       e.preventDefault()
@@ -422,6 +424,7 @@ class Carrito{
   }
   carritoInsertdontsen(tipo){
     const carshopping = document.querySelector('.contain')
+    const total = document.querySelector('.totalCompra')
     let constructor = document.createElement('div')
     constructor.classList.add('div-shop')
     constructor.innerHTML =`
@@ -435,7 +438,15 @@ class Carrito{
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
     <div class="line"></div>
     `
-
+    console.log(total.childNodes)
+    if (total.childNodes.length == 3) {
+      // let nuevo = Number(total.childNodes[2].textContent)
+      // nuevo=Number(tipo[1])
+      
+      console.log(nuevo)
+    }else{
+      total.append(tipo[1])
+    }
     carshopping.appendChild(constructor)
   }
   carritoInsert(tipo){
@@ -671,7 +682,12 @@ const btnCompra = document.querySelector('#comprar')
 const btnVaciarCarro = document.querySelector('#vaciar')
 
 btnVaciarCarro.addEventListener('click',()=>{while (carshopping.firstChild)
-  {carshopping.removeChild(carshopping.firstChild)}
+  {carshopping.removeChild(carshopping.firstChild)
+    const total = document.querySelector('.totalCompra')
+  if (total.childNodes[2]){
+    
+    total.childNodes[2].remove()
+  }}
 })
 btnCompra.addEventListener('click',()=>{
   if (carshopping.childNodes.length == 0){
