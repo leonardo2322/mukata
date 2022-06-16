@@ -39,10 +39,17 @@ const btnsshoppincart = document.querySelector('.btns')
 
 contain.addEventListener('click',(e)=>{
   if(e.target.classList.contains('fas')){
+    const total = document.querySelector('.totalCompra')
+
+    let elemento =e.target.parentElement.parentElement.childNodes[3].textContent
+    let descont = Number(total.childNodes[2].textContent) - Number(elemento)
+    total.childNodes[2].remove()
+    total.append(descont)
     contain.removeChild(e.target.parentElement.parentElement)
   }
   
 })
+
 // clases 
 class Carrito{
 
@@ -86,18 +93,18 @@ class Carrito{
        
       if (meat ==='robalo') {
         const precioFish = Number(price)+ 2000  
-        producto[1] = meat
-        producto[2] = precioFish
+        producto[2] = meat
+        producto[1] = precioFish
       }else if (meat ==='bagre') {
         console.log(price)
         const precioFish = Number(price)+ 2000  
-        producto[1]= meat
+        producto[2]= meat
         console.log(precioFish)
-        producto[2] = precioFish
+        producto[1] = precioFish
       }
       else{
-        producto[1]=meat
-        producto[2] = price
+        producto[2]=meat
+        producto[1] = price
       }
       producto[0]=plate;
       
@@ -131,8 +138,8 @@ class Carrito{
         nodos[5].childNodes[1].value = ""
       }
       producto[0]=plate;
-      producto[2]=price
-      producto[1]=meat
+      producto[1]=price
+      producto[2]=meat
 
       if (bLimonada.checked){
         producto[5]=bLimonada.id
@@ -348,7 +355,8 @@ class Carrito{
         producto[4]='cualquier bebida'
       }
       this.carritoInsert(producto)
-    }else if (e.target.classList.contains('portions')) {
+    }
+    else if (e.target.classList.contains('portions')) {
       console.log("aqui continuar")
     }
     else if (e.target.classList.contains('shopp')){
@@ -393,6 +401,7 @@ class Carrito{
   }
   carritoInsertdontmeat(tipo){
     const carshopping = document.querySelector('.contain')
+    const total = document.querySelector('.totalCompra')
     let constructor = document.createElement('div')
     constructor.classList.add('div-shop')
     constructor.innerHTML =`
@@ -403,10 +412,22 @@ class Carrito{
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
     <div class="line"></div>
     `
+    if (total.childNodes.length == 3) {
+      // let nuevo = Number(total.childNodes[2].textContent)
+      // nuevo=Number(tipo[1])
+      let nuevo = Number(total.childNodes[2].textContent)
+      total.childNodes[2].remove()
+      let valorag = nuevo += Number(tipo[1])
+      total.append(valorag)
+      
+    }else{
+      total.append(tipo[1])
+    }
     carshopping.appendChild(constructor)
   }
   carritoInsertdontesp(tipo){
     const carshopping = document.querySelector('.contain')
+    const total = document.querySelector('.totalCompra')
     let constructor = document.createElement('div')
     constructor.classList.add('div-shop')
     constructor.innerHTML =`
@@ -419,7 +440,17 @@ class Carrito{
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
     <div class="line"></div>
     `
-
+    if (total.childNodes.length == 3) {
+      // let nuevo = Number(total.childNodes[2].textContent)
+      // nuevo=Number(tipo[1])
+      let nuevo = Number(total.childNodes[2].textContent)
+      total.childNodes[2].remove()
+      let valorag = nuevo += Number(tipo[1])
+      total.append(valorag)
+      
+    }else{
+      total.append(tipo[1])
+    }
     carshopping.appendChild(constructor)
   }
   carritoInsertdontsen(tipo){
@@ -438,12 +469,14 @@ class Carrito{
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
     <div class="line"></div>
     `
-    console.log(total.childNodes)
     if (total.childNodes.length == 3) {
       // let nuevo = Number(total.childNodes[2].textContent)
       // nuevo=Number(tipo[1])
+      let nuevo = Number(total.childNodes[2].textContent)
+      total.childNodes[2].remove()
+      let valorag = nuevo += Number(tipo[1])
+      total.append(valorag)
       
-      console.log(nuevo)
     }else{
       total.append(tipo[1])
     }
@@ -451,6 +484,7 @@ class Carrito{
   }
   carritoInsert(tipo){
     const carshopping = document.querySelector('.contain')
+    const total = document.querySelector('.totalCompra')
     let constructor = document.createElement('div')
     constructor.classList.add('div-shop')
     constructor.innerHTML =`
@@ -462,6 +496,17 @@ class Carrito{
     <span class="circle-x"><i class="fas fa-times-circle"></i></span>
     <div class="line"></div>
     `
+    if (total.childNodes.length == 3) {
+      // let nuevo = Number(total.childNodes[2].textContent)
+      // nuevo=Number(tipo[1])
+      let nuevo = Number(total.childNodes[2].textContent)
+      total.childNodes[2].remove()
+      let valorag = nuevo += Number(tipo[1])
+      total.append(valorag)
+      
+    }else{
+      total.append(tipo[1])
+    }
     carshopping.appendChild(constructor)
   }
 }
