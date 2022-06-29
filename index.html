@@ -43,7 +43,7 @@
         <hr>
         <div class="contain"></div>
         <div class="btns">
-            <h2 class="totalCompra"><span>Total De la compra:</span> </h2>
+            <h2 class="totalCompra" id="compratotal"><span>Total De la compra:</span> </h2>
             <a href="#" id="vaciar" class="btn-show">Vaciar Carrito</a>
             <a href="#" id="comprar" class="btn-show">Realizar compra</a>
         </div>
@@ -551,7 +551,7 @@
                 <img src="./img/img6.jpg" alt="">
 
           
-                    <ul class="dropdown-menu" data-id="1" role="menu">
+                    <ul class="dropdown-menu" data-id="1" id="porciones" role="menu">
 
                         <li><h2 class="menu-btn">Porciones Seleccione</h2></li>
                         <li class="port"><label for="chorizo">chorizo</label><input type="checkbox" name="Porciones[]" id="chorizo"><input type="text" name="precio" value="3000" id="precio" disabled><div class="contain-inp"><button class="decrement" id="decrement" onclick="stepper(this)"> - </button><input  type="number" name="cant" id="quantityA" min="0" max="10" value="1" step="1" readonly><button class="increment" id="increment" onclick="stepper(this)"> + </button></div></li>
@@ -607,7 +607,7 @@
                             <option value="bagre">bagre</option>
                             <option value="Filete de pechuga">Filete de pechuga</option>
                         </select></li>
-                        <li><a href="#" class="btn-show shopp portions" >Agrepar A la compra</a></li>
+                        <li><a href="#" class="btn-show portions shopp" >Agrepar A la compra</a></li>
 
                     </ul>
              

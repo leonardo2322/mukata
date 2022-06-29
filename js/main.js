@@ -55,7 +55,7 @@ class Carrito{
 
   compra(e){
     const producto ={}
-
+    const productoPortion = {}
     
     if(e.target.classList.contains('drink')){
       var check =e.target.parentElement.parentElement
@@ -357,7 +357,19 @@ class Carrito{
       this.carritoInsert(producto)
     }
     else if (e.target.classList.contains('portions')) {
-      console.log("aqui continuar")
+      e.preventDefault()
+      const contenedorPorciones = document.querySelector('#porciones')
+      contenedorPorciones.childNodes.forEach((e)=>{
+        if (e.nodeName != '#text'){
+          e.childNodes.forEach((e)=>{
+            if(e.checked){
+              let C = e.parentElement.childNodes[3].childNodes[1].value 
+            }
+          })
+
+        }
+      })
+      
     }
     else if (e.target.classList.contains('shopp')){
       e.preventDefault()
@@ -741,11 +753,12 @@ btnCompra.addEventListener('click',()=>{
     let compraARealizar = ""
     let reg =  /\\n/
     carshopping.childNodes.forEach((e)=>{
-     
+
      compraARealizar += e.textContent + 'sigue'
     })
     let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, "_")
-    let textdontSpace = newtext.replace(/\s+/g, " ")
+    let totalDeLaCompra = document.querySelector('#compratotal').textContent
+    let textdontSpace = newtext.replace(/\s+/g, " ") +totalDeLaCompra
     let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${textdontSpace}`
     btnCompra.setAttribute('href',`${what}`)
     
@@ -757,3 +770,4 @@ contenedordayMenu.addEventListener('click',(e)=>{carrito.compra(e)})
 containEspecials.addEventListener('click',(e)=>{carrito.compra(e)})
 containerSencillos.addEventListener('click',(e)=>{carrito.compra(e)})
 containerBandejas.addEventListener('click',(e)=>{carrito.compra(e)})
+containerPorciones.addEventListener('click',(e)=>{carrito.compra(e)})
