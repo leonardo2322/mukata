@@ -73,7 +73,7 @@
                 <hr>         
                 <img src="./img/nvimg/WhatsApp_Image_2022-05-31_at_4.32.12_PM-removebg-preview.png" alt="">
 
-                    <h1 class="menu-btn">Lunes, Miercoles, jueves, viernes, sabado preguntar que se eligio</h1>
+                    <h1 class="menu-btn">Lunes, Miercoles, jueves, sabado preguntar que se eligio</h1>
                     <h1 class="menu-btn">Menu Martes</h1>
                     <h1 class="menu-btn">Pollo o posta sudada</h1>
                     <ul class="dropdown-menu" data-id="1" role="menu">
@@ -101,6 +101,29 @@
                     <ul class="dropdown-menu" data-id="1" role="menu">
                         
                         <li><h2 class="menu-btn">sancocho de res, arroz, ensalada, aguacate, banano</h2></li>
+
+                        <li><span class="spanPrice">Precio: <input type="text" value="15000" disabled> $</span></li>
+
+                        <li class="espcification"><span>alguna especificacion: </span><input type="text"  placeholder="Escriba que desea cambiar del plato" value="" ></li>
+
+                        <li class="containDrinkselect">Que bebida desea Para el especial: 
+                            <div class="drinkSelectL"><label for="Limonada">limonada</label><input type="radio" name="Ebebida" id="limOnAda"></div>
+
+                            <div class="drinkSelect"><label for="Claro">Claro</label><input type="radio" name="Ebebida" id="cLarO"></div>
+
+                            <div class="drinkSelectM"><label for="Mazamorra">Mazamorra</label><input type="radio" name="Ebebida" id="maZamOrra"></div>
+                            <div class="Milk">jugo del dia<input type="radio" name="Ebebida" id="jugo_Del_dIA"></div>
+                        </li>
+
+
+                        <li>si desea otra Bebida Presione aqui <input class="drink" type="checkbox" name="other-drink" id=""><input type="text" name="" id="changedrink" placeholder="que bebida desea" disabled></li>
+
+                        <li><a href="#" class="btn-show shopp dy" >Agrepar A la compra</a></li>
+                    </ul>
+                    <h1 class="menu-btn">Mondongo</h1>
+                    <ul class="dropdown-menu" data-id="1" role="menu">
+                        
+                        <li><h2 class="menu-btn">Mondongo, arroz, ensalada, aguacate, banano</h2></li>
 
                         <li><span class="spanPrice">Precio: <input type="text" value="15000" disabled> $</span></li>
 
@@ -568,7 +591,7 @@
 
                         <li class="port"><label for="Porcion de maduro 3und">Porcion de maduro 3und</label><input type="checkbox" name="Porciones[]" id="Porcion de maduro 3und"><input type="text" name="precio" value="1000" id="precio" disabled><div class="contain-inp"><button class="decrement"id="decrement" onclick="stepper6(this)"> - </button><input  type="number" name="cant" id="quantityG" min="0" max="10" value="1" step="1" readonly><button class="increment"id="increment" onclick="stepper6(this)"> + </button></div></li>
 
-                        <li><label for="Porcion de Carne">Porcion de Carne</label><input type="checkbox" name="Porciones[]" id="Porcion de Carne"><input type="text" name="precio" value="8000" id="precio" disabled> <select name="carnes" id="carnes" >
+                        <li><label for="Porcion de Carne">Porcion de Carne</label><input type="checkbox" name="Porciones[]" id="PorcionDeCarne"><input type="text" name="precio" value="8000" id="precio" disabled> <select name="carnes" id="carnes" >
                             <option value="res">Res</option>
                             <option value="cerdo">Cerdo</option>
                             <option value="chicharron">chicharron</option>
@@ -582,7 +605,7 @@
 
                         </select></li>
 
-                        <li><label for="Carne y papas">Carne y papas</label><input type="checkbox" name="Porciones[]" id="Carne y papas"><input type="text" name="precio" value="12000" id="precio" disabled><select name="carnes" id="carnes" >
+                        <li><label for="Carne y papas">Carne y papas</label><input type="checkbox" name="Porciones[]" id="CarneYpapas"><input type="text" name="precio" value="12000" id="precio" disabled><select name="carnes" id="carnes" >
                             <option value="res">Res</option>
                             <option value="cerdo">Cerdo</option>
                             <option value="chicharron">chicharron</option>
@@ -595,7 +618,7 @@
                             <option value="Filete de pechuga">Filete de pechuga</option>
                         </select></li>
 
-                        <li><label for="carne y Ensalada">carne y Ensalada</label><input type="checkbox" name="Porciones[]" id="carne y Ensalada"><input type="text" name="precio" value="11000" id="precio" disabled><select name="carnes" id="carnes" >
+                        <li><label for="carne y Ensalada">carne y Ensalada</label><input type="checkbox" name="Porciones[]" id="carneYEnsalada"><input type="text" name="precio" value="11000" id="precio" disabled><select name="carnes" id="carnes" >
                             <option value="res">Res</option>
                             <option value="cerdo">Cerdo</option>
                             <option value="chicharron">chicharron</option>

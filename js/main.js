@@ -363,7 +363,13 @@ class Carrito{
         if (e.nodeName != '#text'){
           e.childNodes.forEach((e)=>{
             if(e.checked){
-              let C = e.parentElement.childNodes[3].childNodes[1].value 
+              if(e.id == "CarneYpapas" || e.id == "PorcionDeCarne" || e.id == "carneYEnsalada"){
+                console.log(e.id)
+              }else{
+                let C = e.parentElement.childNodes[3].childNodes[1].value 
+                console.log(C ,'porcion de:', e.parentElement.childNodes[0].textContent)
+              }
+              
             }
           })
 
@@ -754,11 +760,11 @@ btnCompra.addEventListener('click',()=>{
     let reg =  /\\n/
     carshopping.childNodes.forEach((e)=>{
 
-     compraARealizar += e.textContent + 'sigue'
+     compraARealizar += e.textContent + '|'
     })
     let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, "_")
     let totalDeLaCompra = document.querySelector('#compratotal').textContent
-    let textdontSpace = newtext.replace(/\s+/g, " ") +totalDeLaCompra
+    let textdontSpace = newtext.replace(/\s+/g, " ") + totalDeLaCompra
     let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${textdontSpace}`
     btnCompra.setAttribute('href',`${what}`)
     
