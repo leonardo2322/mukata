@@ -374,30 +374,38 @@ class Carrito{
         if (e.nodeName != '#text'){
           e.childNodes.forEach((e)=>{
             if(e.checked){
-              if(e.id == "PorcionDeCarne"){
+              if(e.id == "PorcionDeCarne" && e.checked){
                 console.log(e.id, e.parentElement.childNodes)
                 productoPortion[0]= e.id
                 productoPortion[1]= e.parentElement.childNodes[4].value
                 productoPortion[2]= 1
                 productoPortion[3]= e.parentElement.childNodes[2].value
-                this.portionAdd(productoPortion)
+                this.portionAddEag(productoPortion)
 
-              }else if ( e.id == "CarneYpapas"){
+              }else if ( e.id == "CarneYpapas" && e.checked){
                 productoPortion[0]= e.id
                 productoPortion[1]= e.parentElement.childNodes[3].value
                 productoPortion[2]= 1
                 productoPortion[3]= e.parentElement.childNodes[2].value
-                this.portionAdd(productoPortion)
-              }else if (e.id == "carneYEnsalada"){
+                this.portionAddEag(productoPortion)
+              }else if (e.id == "carneYEnsalada" && e.checked){
                 productoPortion[0]= e.id
                 productoPortion[1]= e.parentElement.childNodes[3].value
                 productoPortion[2]= 1
                 productoPortion[3]= e.parentElement.childNodes[2].value
-                this.portionAdd(productoPortion)
+                this.portionAddEag(productoPortion)
               }
               else{
-                let C = e.parentElement.childNodes[3].childNodes[1].value 
-                console.log(C ,'porcion de:', e.parentElement.childNodes[0].textContent)
+                let Cant = e.parentElement.childNodes[3].childNodes[1].value 
+                let price = e.parentElement.childNodes[2].value
+                let nameP = e.parentElement.childNodes[0].textContent
+                let valor = Number(Cant) * Number(price)
+
+                productoPortion[0]= 'Porcion de: '
+                productoPortion[1]= nameP
+                productoPortion[2]= Cant
+                productoPortion[3]= valor
+                this.portionAddEag(productoPortion)
               }
               
             }
@@ -447,7 +455,7 @@ class Carrito{
     producto[1]=price
     this.carritoInsertdontmeat(producto)
   }
-  portionAdd(tipo){
+  portionAddEag(tipo){
     const carshopping = document.querySelector('.contain')
     const total = document.querySelector('.totalCompra')
     let constructor = document.createElement('div')
