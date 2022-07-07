@@ -396,6 +396,7 @@ class Carrito{
                 this.portionAddEag(productoPortion)
               }
               else{
+
                 let Cant = e.parentElement.childNodes[3].childNodes[1].value 
                 let price = e.parentElement.childNodes[2].value
                 let nameP = e.parentElement.childNodes[0].textContent
@@ -414,6 +415,31 @@ class Carrito{
         }
       })
       
+    }
+    else if (e.target.classList.contains('bebidas')){
+      e.preventDefault()
+      console.log('estamos por aca')
+      const contenedorbebidas = document.querySelector('#bebidas')
+      contenedorbebidas.childNodes.forEach((e)=>{
+        if (e.nodeName != '#text'){
+          e.childNodes.forEach((e)=>{
+            if(e.checked){
+
+              let Cant = e.parentElement.childNodes[3].childNodes[1].value 
+              let price = e.parentElement.childNodes[2].value
+              let nameP = e.parentElement.childNodes[0].textContent
+              let valor = Number(Cant) * Number(price)
+
+              productoPortion[0]= 'Porcion de: '
+              productoPortion[1]= nameP
+              productoPortion[2]= Cant
+              productoPortion[3]= valor
+              this.portionAddEag(productoPortion)
+            }
+          })
+
+        }
+      })
     }
     else if (e.target.classList.contains('shopp')){
       e.preventDefault()
@@ -841,3 +867,4 @@ containEspecials.addEventListener('click',(e)=>{carrito.compra(e)})
 containerSencillos.addEventListener('click',(e)=>{carrito.compra(e)})
 containerBandejas.addEventListener('click',(e)=>{carrito.compra(e)})
 containerPorciones.addEventListener('click',(e)=>{carrito.compra(e)})
+containerBebidas.addEventListener('click',(e)=>{carrito.compra(e)})
