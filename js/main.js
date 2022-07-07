@@ -38,10 +38,21 @@ const btnsshoppincart = document.querySelector('.btns')
 
 
 contain.addEventListener('click',(e)=>{
-  if(e.target.classList.contains('fas')){
+  if (e.target.classList.contains('fas-')){
+    const total = document.querySelector('.totalCompra')
+
+    let elemento =e.target.parentElement.parentElement.childNodes[7].innerText
+    console.log(elemento)
+    let descont = Number(total.childNodes[2].textContent) - Number(elemento)
+    total.childNodes[2].remove()
+    total.append(descont)
+    contain.removeChild(e.target.parentElement.parentElement)
+  }
+  else if(e.target.classList.contains('fas')){
     const total = document.querySelector('.totalCompra')
 
     let elemento =e.target.parentElement.parentElement.childNodes[3].textContent
+    console.log(elemento)
     let descont = Number(total.childNodes[2].textContent) - Number(elemento)
     total.childNodes[2].remove()
     total.append(descont)
@@ -363,9 +374,28 @@ class Carrito{
         if (e.nodeName != '#text'){
           e.childNodes.forEach((e)=>{
             if(e.checked){
-              if(e.id == "CarneYpapas" || e.id == "PorcionDeCarne" || e.id == "carneYEnsalada"){
-                console.log(e.id)
-              }else{
+              if(e.id == "PorcionDeCarne"){
+                console.log(e.id, e.parentElement.childNodes)
+                productoPortion[0]= e.id
+                productoPortion[1]= e.parentElement.childNodes[4].value
+                productoPortion[2]= 1
+                productoPortion[3]= e.parentElement.childNodes[2].value
+                this.portionAdd(productoPortion)
+
+              }else if ( e.id == "CarneYpapas"){
+                productoPortion[0]= e.id
+                productoPortion[1]= e.parentElement.childNodes[3].value
+                productoPortion[2]= 1
+                productoPortion[3]= e.parentElement.childNodes[2].value
+                this.portionAdd(productoPortion)
+              }else if (e.id == "carneYEnsalada"){
+                productoPortion[0]= e.id
+                productoPortion[1]= e.parentElement.childNodes[3].value
+                productoPortion[2]= 1
+                productoPortion[3]= e.parentElement.childNodes[2].value
+                this.portionAdd(productoPortion)
+              }
+              else{
                 let C = e.parentElement.childNodes[3].childNodes[1].value 
                 console.log(C ,'porcion de:', e.parentElement.childNodes[0].textContent)
               }
@@ -416,6 +446,32 @@ class Carrito{
     producto[0]=plate;
     producto[1]=price
     this.carritoInsertdontmeat(producto)
+  }
+  portionAdd(tipo){
+    const carshopping = document.querySelector('.contain')
+    const total = document.querySelector('.totalCompra')
+    let constructor = document.createElement('div')
+    constructor.classList.add('div-shop')
+    constructor.innerHTML =`
+    <p class="datosagregados">${tipo[0]}</p>
+    <p class="datosagregados">${tipo[1]}</p>
+    <p class="datosagregados">${tipo[2]}</p>
+    <p class="datosagregados">${tipo[3]}</p>
+    <span class="circle-x"><i class="fas- fas fa-times-circle"></i></span>
+    <div class="line"></div>
+    `
+    if (total.childNodes.length == 3) {
+      // let nuevo = Number(total.childNodes[2].textContent)
+      // nuevo=Number(tipo[1])
+      let nuevo = Number(total.childNodes[2].textContent)
+      total.childNodes[2].remove()
+      let valorag = nuevo += Number(tipo[3])
+      total.append(valorag)
+      
+    }else{
+      total.append(Number(tipo[3]))
+    }
+    carshopping.appendChild(constructor)
   }
   carritoInsertdontmeat(tipo){
     const carshopping = document.querySelector('.contain')
