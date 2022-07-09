@@ -396,7 +396,7 @@ class Carrito{
                 this.portionAddEag(productoPortion)
               }
               else{
-
+                
                 let Cant = e.parentElement.childNodes[3].childNodes[1].value 
                 let price = e.parentElement.childNodes[2].value
                 let nameP = e.parentElement.childNodes[0].textContent
@@ -418,23 +418,42 @@ class Carrito{
     }
     else if (e.target.classList.contains('bebidas')){
       e.preventDefault()
-      console.log('estamos por aca')
       const contenedorbebidas = document.querySelector('#bebidas')
       contenedorbebidas.childNodes.forEach((e)=>{
         if (e.nodeName != '#text'){
           e.childNodes.forEach((e)=>{
             if(e.checked){
+              if (e.id == "Cerveza") {
+                let re = /\s[0-9]/g
+                let re2 = /([a-z])/g
+                let price = e.parentElement.childNodes[2].value
+                let textCont = e.parentElement.childNodes[3].value
+                if (textCont.length < 0) {
+                  productoPortion[0] = 'cualquier cerveza'
+                }else{
+                  let nombre = textCont.match(re2)
+                  productoPortion[0] = nombre
+                }
+                let tecto =textCont.match(re)
+                productoPortion[1] = 'cantidad'
+                productoPortion[2] = tecto[0]
+                productoPortion[3] = price
+                alert('el precio de la cerveza se dara en whatzapp')
+                this.portionAddEag(productoPortion)
+                
+              }else{
+                let Cant = e.parentElement.childNodes[3].childNodes[1].value 
+                let price = e.parentElement.childNodes[2].value
+                let nameP = e.parentElement.childNodes[0].textContent
+                let valor = Number(Cant) * Number(price)
+  
+                productoPortion[0]= 'bebida: '
+                productoPortion[1]= nameP
+                productoPortion[2]= Cant
+                productoPortion[3]= valor
+                this.portionAddEag(productoPortion)
+              }
 
-              let Cant = e.parentElement.childNodes[3].childNodes[1].value 
-              let price = e.parentElement.childNodes[2].value
-              let nameP = e.parentElement.childNodes[0].textContent
-              let valor = Number(Cant) * Number(price)
-
-              productoPortion[0]= 'Porcion de: '
-              productoPortion[1]= nameP
-              productoPortion[2]= Cant
-              productoPortion[3]= valor
-              this.portionAddEag(productoPortion)
             }
           })
 
