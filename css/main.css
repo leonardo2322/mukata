@@ -293,11 +293,11 @@ html{
 
 #breakfasts{
     position: relative;
-    top: -40rem;
+    top: -300rem;
 }
 #Especials{
     position: relative;
-    top: -170rem;
+    top: -555rem;
 }
 #daymenu{
     position: relative;
@@ -305,20 +305,20 @@ html{
 }
 #Sencillos{
     position: relative;
-    top: -255rem;
+    top: -720rem;
 }
 #Bandejas{
     position: relative;
-    top:-300rem;
+    top:-805rem;
 }
 #Bebidas{
     position: relative;
-    top: -365rem;
+    top: -955rem;
     width: 100%;
 }
 #Porciones{
     position: relative;
-    top:-415rem;
+    top:-1085rem;
     width: 100%;
 }
 /* estilizacioon elementos dentro ul */

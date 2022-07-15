@@ -148,8 +148,22 @@ class Carrito{
         nodos[9].childNodes[2].value =""
         nodos[5].childNodes[1].value = ""
       }
+      if (meat ==='Especial de Robalo') {
+        const precioFish = Number(price)+ 2000  
+        producto[2] = meat
+        producto[1] = precioFish
+      }else if (meat ==='Especial de Chuleta de cerdo' || meat==='Especial de Filete') {
+        console.log(price)
+        const precioFish = Number(price)- 5000  
+        producto[2]= meat
+        console.log(precioFish)
+        producto[1] = precioFish
+      }
+      else{
+        producto[2]=meat
+        producto[1] = price
+      }
       producto[0]=plate;
-      producto[1]=price
       producto[2]=meat
 
       if (bLimonada.checked){
@@ -674,20 +688,20 @@ botnshowdaymenu.addEventListener('click',(e)=>{
     contPorciones.classList.remove('btn-group-show6')
     // agregando la distancia de los contenedores
     breakfastcontainer.style.top ="-2rem"
-    containEspecials.style.top = "-130rem"
-    containerSencillos.style.top = "-215rem"
-    containerBandejas.style.top = "-265rem"
-    containerBebidas.style.top = "-335rem"
-    containerPorciones.style.top = "-395rem"
+    containEspecials.style.top = "-260rem"
+    containerSencillos.style.top = "-425rem"
+    containerBandejas.style.top = "-510rem"
+    containerBebidas.style.top = "-665rem"
+    containerPorciones.style.top = "-800rem"
     
   }else{
     contenedordayMenu.classList.remove('btn-group-show1')
-    containEspecials.style.top = "-165rem"
-    breakfastcontainer.style.top ="-40rem"
-    containerSencillos.style.top = "-255rem"
-    containerBandejas.style.top = "-305rem"
-    containerBebidas.style.top = "-375rem"
-    containerPorciones.style.top = "-435rem"
+    containEspecials.style.top = "-555rem"
+    breakfastcontainer.style.top ="-300rem"
+    containerSencillos.style.top = "-720rem"
+    containerBandejas.style.top = "-805rem"
+    containerBebidas.style.top = "-955rem"
+    containerPorciones.style.top = "-1085rem"
   }})
 
 botnshow.addEventListener('click',(e)=>{
@@ -697,7 +711,7 @@ botnshow.addEventListener('click',(e)=>{
     contenedor.classList.add('btn-group-show')
 // echando el contenedor hacia atras
     if (breakfastcontainer.style.top == "-2rem"){
-      breakfastcontainer.style.top = "-40rem"
+      breakfastcontainer.style.top = "-300rem"
     }
          // removiendo la propiedad abierta
     contenedordayMenu.classList.remove('btn-group-show1')
@@ -708,18 +722,19 @@ botnshow.addEventListener('click',(e)=>{
     contPorciones.classList.remove('btn-group-show6')
     // poniendo los espaciados
     contenedor.style.top = "-20rem"
-    containEspecials.style.top = "-45rem"
-    containerSencillos.style.top = "-135rem"
-    containerBandejas.style.top = "-185rem"
-    containerBebidas.style.top = "-255rem"
-    containerPorciones.style.top = "-310rem"
+    containEspecials.style.top = "-300rem"
+    containerSencillos.style.top = "-460rem"
+    containerBandejas.style.top = "-545rem"
+    containerBebidas.style.top = "-700rem"
+    containerPorciones.style.top = "-830rem"
   }else{
     contenedor.classList.remove('btn-group-show')
-    containEspecials.style.top = "-165rem"
-    containerSencillos.style.top = "-255rem"
-    containerBandejas.style.top = "-300rem"
-    containerBebidas.style.top = "-370rem"
-    containerPorciones.style.top = "-425rem"
+    containEspecials.style.top = "-555rem"
+    breakfastcontainer.style.top ="-300rem"
+    containerSencillos.style.top = "-720rem"
+    containerBandejas.style.top = "-805rem"
+    containerBebidas.style.top = "-955rem"
+    containerPorciones.style.top = "-1085rem"
   }})
 
 
@@ -728,8 +743,8 @@ btnespecials.addEventListener('click',(e)=>{
   if (contEspecials.classList.contains('btn-group-show2')==false){
     contEspecials.classList.add('btn-group-show2')
 
-    if (containEspecials.style.top == "-45rem") {
-      containEspecials.style.top = "-165rem"
+    if (containEspecials.style.top == "-300rem") {
+      containEspecials.style.top = "-550rem"
 
     }
      // removiendo la propiedad abierta
@@ -741,16 +756,16 @@ btnespecials.addEventListener('click',(e)=>{
     contPorciones.classList.remove('btn-group-show6')
 
         // poniendo los espaciados
-    containerSencillos.style.top = "-175rem"
-    containerBandejas.style.top = "-220rem"
-    containerBebidas.style.top = "-290rem"
-    containerPorciones.style.top = "-345rem"
+    containerSencillos.style.top = "-560rem"
+    containerBandejas.style.top = "-650rem"
+    containerBebidas.style.top = "-805rem"
+    containerPorciones.style.top = "-940rem"
 }else{
   contEspecials.classList.remove('btn-group-show2')
-  containerSencillos.style.top = "-255rem"
-  containerBandejas.style.top = "-300rem"
-  containerBebidas.style.top = "-370rem"
-  containerPorciones.style.top = "-430rem"
+  containerSencillos.style.top = "-720rem"
+  containerBandejas.style.top = "-805rem"
+  containerBebidas.style.top = "-955rem"
+  containerPorciones.style.top = "-1085rem"
 }})
 
 btnSencillos.addEventListener('click',(e)=>{
@@ -758,8 +773,8 @@ btnSencillos.addEventListener('click',(e)=>{
   if (contSencillos.classList.contains('btn-group-show3')==false){
     contSencillos.classList.add('btn-group-show3')
 
-    if (containerSencillos.style.top == "-175rem") {
-      containerSencillos.style.top = "-235rem"
+    if (containerSencillos.style.top == "-560rem") {
+      containerSencillos.style.top = "-710rem"
 
     }
      // removiendo la propiedad abierta
@@ -770,22 +785,22 @@ btnSencillos.addEventListener('click',(e)=>{
     contBebidas.classList.remove('btn-group-show5')
     contPorciones.classList.remove('btn-group-show6')
 
-    containerBandejas.style.top = "-245rem"
-    containerBebidas.style.top = "-370rem"
-    containerPorciones.style.top = "-390rem"
+    containerBandejas.style.top = "-720rem"
+    containerBebidas.style.top = "-875rem"
+    containerPorciones.style.top = "-1010rem"
 }else{
   contSencillos.classList.remove('btn-group-show3')
-  containerBandejas.style.top = "-295rem"
-  containerBebidas.style.top = "-365rem"
-  containerPorciones.style.top = "-420rem"
+  containerBandejas.style.top = "-805rem"
+  containerBebidas.style.top = "-955rem"
+  containerPorciones.style.top = "-1085rem"
 }})
 
 btnBandejas.addEventListener('click',(e)=>{
   e.preventDefault()
   if (contBandejas.classList.contains('btn-group-show4')==false){
     contBandejas.classList.add('btn-group-show4')
-    if (containerBandejas.style.top == "-240rem") {
-      containerBandejas.style.top = "-300rem"
+    if (containerBandejas.style.top == "-720rem") {
+      containerBandejas.style.top = "-800rem"
     }
          // removiendo la propiedad abierta
     contenedor.classList.remove('btn-group-show')
@@ -795,13 +810,13 @@ btnBandejas.addEventListener('click',(e)=>{
     contBebidas.classList.remove('btn-group-show5')
     contPorciones.classList.remove('btn-group-show6')
 
-    containerBebidas.style.top = "-310rem"
-    containerPorciones.style.top = "-365rem"
+    containerBebidas.style.top = "-810rem"
+    containerPorciones.style.top = "-950rem"
 
 }else{
   contBandejas.classList.remove('btn-group-show4')
-  containerBebidas.style.top = "-370rem"
-  containerPorciones.style.top ="-420rem"
+  containerBebidas.style.top = "-955rem"
+  containerPorciones.style.top = "-1085rem"
 }})
 
 btnBebidas.addEventListener('click',(e)=>{
@@ -809,8 +824,8 @@ btnBebidas.addEventListener('click',(e)=>{
   if (contBebidas.classList.contains('btn-group-show5')==false){
     contBebidas.classList.add('btn-group-show5')
 
-    if (containerBebidas.style.top == "-310rem") {
-      containerBebidas.style.top = "-365rem"
+    if (containerBebidas.style.top == "-810rem") {
+      containerBebidas.style.top = "-960rem"
     }
          // removiendo la propiedad abierta
     contenedor.classList.remove('btn-group-show')
@@ -820,10 +835,10 @@ btnBebidas.addEventListener('click',(e)=>{
     contBandejas.classList.remove('btn-group-show4')
     contPorciones.classList.remove('btn-group-show6')
 
-    containerPorciones.style.top = "-305rem"
+    containerPorciones.style.top = "-960rem"
 }else{
   contBebidas.classList.remove('btn-group-show5')
-  
+  containerPorciones.style.top = "-1085rem"
 }})
 
 btnPorciones.addEventListener('click',(e)=>{
@@ -831,8 +846,8 @@ btnPorciones.addEventListener('click',(e)=>{
   if (contPorciones.classList.contains('btn-group-show6')==false){
     contPorciones.classList.add('btn-group-show6')
 
-    if (containerPorciones.style.top == "-365rem") {
-      containerPorciones.style.top = "-420rem"
+    if (containerPorciones.style.top == "-960rem") {
+      containerPorciones.style.top = "-1090rem"
     }
     // removiendo la propiedad abierta
     contenedor.classList.remove('btn-group-show')
