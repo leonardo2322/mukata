@@ -612,4 +612,8 @@ li{
     #precio{
         width: 10rem;
     }
+    .direction{
+        position: relative;
+        top: -860rem;
+    }
 }

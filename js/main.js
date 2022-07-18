@@ -36,6 +36,7 @@ const contain = document.querySelector('.contain')
 const containerPrincipal = document.querySelector('.container')
 const btnsshoppincart = document.querySelector('.btns')
 
+const direction = document.querySelector('.direction')
 
 contain.addEventListener('click',(e)=>{
   if (e.target.classList.contains('fas-')){
@@ -856,9 +857,10 @@ btnPorciones.addEventListener('click',(e)=>{
     contSencillos.classList.remove('btn-group-show3')
     contBandejas.classList.remove('btn-group-show4')
     contBebidas.classList.remove('btn-group-show5')
+    direction.style.top = "-700rem"
 }else{
   contPorciones.classList.remove('btn-group-show6')
-  
+  direction.style.top = "-800rem"
 }})
 
   
