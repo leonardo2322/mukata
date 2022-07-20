@@ -26,8 +26,10 @@ h1, h3{
 
 
 body{
-    background-color: #ffdead;
-
+    background: url("/img/f.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: 0 0;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -128,11 +130,11 @@ html{
     letter-spacing: .2rem;
     line-height: 3rem;
     margin-bottom: 3rem;
-    color: #df7d05;
+    color: #000;
 }
 .about h1{
     font-size: 3rem;
-    color: var(--red);
+    color: rgb(243, 0, 0);
 }
  .about .btn-show{
     display: block;
@@ -142,7 +144,7 @@ html{
     border: .1rem solid var(--yellow);
     font-weight: 700;
     font-size: 1.7rem;
-    color:var(--red);
+    color:#000;
     cursor: pointer;
     background:#fff;
     background-size: 90%;
@@ -203,14 +205,14 @@ html{
     border: .1rem solid var(--yellow);
     font-weight: 700;
     font-size: 1.7rem;
-    color:var(--red);
+    color:#000;
     cursor: pointer;
     background:#fff;
     background-size: 90%;
     padding:.8rem 3rem;
 }
 .navbar .btn-show:hover{
-    background-color: var(--red);
+    background-color: #000;
     color: #fff;
     transition: 2ms ease-in;
 }
@@ -338,13 +340,13 @@ input:disabled{
 
 .espcification input:focus{
     background: rgba(0,0,0,.1);
-    border-bottom: 3px solid rgba(255,0,0,0.8);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.8);
     border-left: none;
 }
 .espcification input::placeholder{
     font-size: 1.6rem;
     font-weight: 900;
-    color: rgb(255,0,0);
+    color: rgb(0, 0, 0);
 }
 
 .about p{
@@ -352,17 +354,17 @@ input:disabled{
     margin: 3rem;
 }
 #changedrink{
-    border-left: 3px solid rgba(255,0,0,0.8);
+    border-left: 3px solid rgba(0, 0, 0, 0.8);
     margin-left: 20px;
     padding: 0.5rem;
     background: transparent;
     font-size: 1.8rem;
-    color: rgb(255,0,0);
+    color: rgb(0, 0, 0);
     text-align: left;
 }
 #changedrink:focus{
     background: rgba(0,0,0,.1);
-    border-bottom: 3px solid rgba(255,0,0,0.8);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.8);
     border-left: none;
 }
 li{
@@ -382,10 +384,7 @@ li{
      .container{
          top: 80vh;
      }
- }
-
- @media (max-width:1200px){
-    html{
+     html{
         font-size: 55%;
     }
     .espcification input{
@@ -412,7 +411,8 @@ li{
         top:8rem; left: 0%;
         width:100%;
         height: 40rem;
-        background:var(--backg);
+        background:url("/img/ma.jpg");
+        background-size: cover;
         border-top: .2rem solid rgba(0,0,0,.1);
         box-shadow: 2px 2px 5px #333;
         overflow: hidden;
@@ -471,7 +471,7 @@ li{
     }
     .NosUbicamos{
         font-size: 3rem;
-        color: var(--red);
+        color: #000;
         position: relative;
         top: -378rem;
     }
@@ -487,7 +487,7 @@ li{
 
     .Ncontact{
         font-size: 3rem;
-        color: var(--red);
+        color: #000;
     }
     .espcification input{
         font-size: 1.2rem;
@@ -513,7 +513,8 @@ li{
         top:8rem; left: 0%;
         width:100%;
         height: 40rem;
-        background:var(--backg);
+        background:url("/img/ma.jpg");
+        background-size: cover;
         border-top: .2rem solid rgba(0,0,0,.1);
         box-shadow: 2px 2px 5px #333;
         overflow: hidden;
@@ -556,17 +557,17 @@ li{
     .cervezainput{
         background-color: transparent;
         font-size: 1.7rem;
-        border-left: 3px solid rgba(255,0,0,0.8);
+        border-left: 3px solid rgba(0, 0, 0, 0.8);
         font-weight: 300;
         padding: 1.25rem;
         width: 12rem;
     }
     .cervezainput::placeholder{
-        color: #ff0800;
+        color: #020202;
     }
     .cervezainput:focus{
         background: rgba(0,0,0,.1);
-        border-bottom: 3px solid rgba(255,0,0,0.8);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.8);
         border-left: none;
     }
     .contain-inp{
@@ -615,5 +616,254 @@ li{
     .direction{
         position: relative;
         top: -810rem;
+        box-shadow: #000;
     }
+
+    .spanPrice input{
+        width: 9rem;
+    }
+ }
+
+ @media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+    .espcification input{
+        font-size: 1.2rem;
+        width: 85%;
+    }
+    #changedrink{
+        width: 90%;
+        font-weight: 400;
+    }
+
+    #burg-menu{
+        display: block;
+    }
+    #burg-menu:hover{
+        color: var(--yellow);
+    }
+    .navbar{
+        display: none;
+        flex-wrap: wrap;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        top:8rem; left: 0%;
+        width:100%;
+        height: 40rem;
+        background:url("/img/ma.jpg");
+        background-size: cover;
+        background-position: 0 0;
+        
+        border-top: .2rem solid rgba(0,0,0,.1);
+        box-shadow: 2px 2px 5px #333;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    .navbar ul{
+    width: 100%;
+    height: 10%;
+    margin-top: 1rem;
+    }
+
+    .navbar ul li{
+        margin:1.5rem 2rem;
+    }
+    .navbar ul li{
+        display: inline;
+        color: var(--brown);
+        
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-left: .2rem solid var(--brown);
+        font-size: 2rem;
+    }
+    
+    .navbar ul li a:hover,
+    .navbar ul li a.active{
+        color:#333;
+        border-color: #333;
+    }
+    .container{
+        top: 75vh;
+    }
+    .fa-times{
+        transform: rotate(90deg);
+    }
+    .navtoggle{
+        display: none;
+    }
+}
+
+@media (max-width:768px){
+    html{
+        font-size: 55%;
+    }
+    .mapa{
+        width: 80%;
+        height:400px;
+        position: relative;
+        top: -370rem;
+    }
+    .img-direction{
+        width: 80%;
+        height: 300px;
+        position: relative;
+        top: -375rem;
+    }
+    .NosUbicamos{
+        font-size: 3rem;
+        color: #000;
+        position: relative;
+        top: -378rem;
+    }
+    .title-contacto{
+        width: 2rem;
+        height: 2rem;
+        
+    }
+    .cont-what{
+        position: relative;
+        top: -360rem;
+    }
+
+    .Ncontact{
+        font-size: 3rem;
+        color: #000;
+    }
+    .espcification input{
+        font-size: 1.2rem;
+        width: 85%;
+    }
+    #changedrink{
+        width: 90%;
+        font-weight: 400;
+    }
+
+    #burg-menu{
+        display: block;
+    }
+    #burg-menu:hover{
+        color: var(--yellow);
+    }
+    .navbar{
+        display: none;
+        flex-wrap: wrap;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        top:8rem; left: 0%;
+        width:100%;
+        height: 40rem;
+        background:url("/img/ma.jpg");
+        background-size: cover;
+        border-top: .2rem solid rgba(0,0,0,.1);
+        box-shadow: 2px 2px 5px #333;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    .navbar ul{
+    width: 100%;
+    height: 10%;
+    margin-top: 1rem;
+    }
+
+    .navbar ul li{
+        margin:1.5rem 0.5rem;
+    }
+    .navbar ul li{
+        display: inline;
+        color: var(--brown);
+        
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-left: .2rem solid var(--brown);
+        font-size: 1.5rem;
+    }
+    
+    .navbar ul li a:hover,
+    .navbar ul li a.active{
+        color:#333;
+        border-color: #333;
+    }
+    .container{
+        top: 90vh;
+        height: 1000px;
+    }
+    .fa-times{
+        transform: rotate(90deg);
+    }
+    .navtoggle{
+        display: none;
+    }
+    .cervezainput{
+        background-color: transparent;
+        font-size: 1.7rem;
+        border-left: 3px solid rgba(0, 0, 0, 0.8);
+        font-weight: 300;
+        padding: 1.25rem;
+        width: 12rem;
+    }
+    .cervezainput::placeholder{
+        color: #020202;
+    }
+    .cervezainput:focus{
+        background: rgba(0,0,0,.1);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.8);
+        border-left: none;
+    }
+    .contain-inp{
+        display: flex;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+        text-align: center;
+        width: 5rem;
+        font-size: 2rem;
+        border-radius: 20%;
+        height: 5rem;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+    }
+   
+    .decrement{
+        clip-path: polygon(50% 0%, 80% 10%, 80% 30%, 80% 73%, 80% 90%, 50% 100%, 20% 90%, 6% 68%, 5% 35%, 20% 10%);
+        font-size: 4.8rem;
+        width: 3rem;
+        background-color:#df7d05;
+        
+    }
+    .decrement:hover{
+        background-color: rgba(0,0,0,.1);
+    }
+    .increment{
+        clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 20% 70%, 20% 37%, 20% 10%);
+        font-size: 3rem;
+        width: 3rem;
+        background-color: #df7d05;
+    }
+    .increment:hover{
+        background-color: rgba(0,0,0,.1);
+    }
+    .port{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    #precio{
+        width: 10rem;
+    }
+    .direction{
+        position: relative;
+        top: -810rem;
+        box-shadow: #000;
+    }
+
+    .spanPrice input{
+        width: 9rem;
+    }
+
 }
