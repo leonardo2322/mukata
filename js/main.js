@@ -694,6 +694,7 @@ botnshowdaymenu.addEventListener('click',(e)=>{
     containerBandejas.style.top = "-510rem"
     containerBebidas.style.top = "-665rem"
     containerPorciones.style.top = "-800rem"
+    direction.style.top = "-530rem"
     
   }else{
     contenedordayMenu.classList.remove('btn-group-show1')
@@ -703,6 +704,7 @@ botnshowdaymenu.addEventListener('click',(e)=>{
     containerBandejas.style.top = "-805rem"
     containerBebidas.style.top = "-955rem"
     containerPorciones.style.top = "-1085rem"
+    direction.style.top = "-810rem"
   }})
 
 botnshow.addEventListener('click',(e)=>{
@@ -728,6 +730,7 @@ botnshow.addEventListener('click',(e)=>{
     containerBandejas.style.top = "-545rem"
     containerBebidas.style.top = "-700rem"
     containerPorciones.style.top = "-830rem"
+    direction.style.top = "-540rem"
   }else{
     contenedor.classList.remove('btn-group-show')
     containEspecials.style.top = "-555rem"
@@ -736,6 +739,7 @@ botnshow.addEventListener('click',(e)=>{
     containerBandejas.style.top = "-805rem"
     containerBebidas.style.top = "-955rem"
     containerPorciones.style.top = "-1085rem"
+    direction.style.top = "-810rem"
   }})
 
 
@@ -761,12 +765,14 @@ btnespecials.addEventListener('click',(e)=>{
     containerBandejas.style.top = "-650rem"
     containerBebidas.style.top = "-805rem"
     containerPorciones.style.top = "-940rem"
+    direction.style.top = "-660rem"
 }else{
   contEspecials.classList.remove('btn-group-show2')
   containerSencillos.style.top = "-720rem"
   containerBandejas.style.top = "-805rem"
   containerBebidas.style.top = "-955rem"
   containerPorciones.style.top = "-1085rem"
+  direction.style.top = "-810rem"
 }})
 
 btnSencillos.addEventListener('click',(e)=>{
@@ -789,11 +795,13 @@ btnSencillos.addEventListener('click',(e)=>{
     containerBandejas.style.top = "-720rem"
     containerBebidas.style.top = "-875rem"
     containerPorciones.style.top = "-1010rem"
+    direction.style.top = "-730rem"
 }else{
   contSencillos.classList.remove('btn-group-show3')
   containerBandejas.style.top = "-805rem"
   containerBebidas.style.top = "-955rem"
   containerPorciones.style.top = "-1085rem"
+  direction.style.top = "-810rem"
 }})
 
 btnBandejas.addEventListener('click',(e)=>{
@@ -813,11 +821,13 @@ btnBandejas.addEventListener('click',(e)=>{
 
     containerBebidas.style.top = "-810rem"
     containerPorciones.style.top = "-950rem"
+    direction.style.top = "-670rem"
 
 }else{
   contBandejas.classList.remove('btn-group-show4')
   containerBebidas.style.top = "-955rem"
   containerPorciones.style.top = "-1085rem"
+  direction.style.top = "-810rem"
 }})
 
 btnBebidas.addEventListener('click',(e)=>{
@@ -837,9 +847,11 @@ btnBebidas.addEventListener('click',(e)=>{
     contPorciones.classList.remove('btn-group-show6')
 
     containerPorciones.style.top = "-960rem"
+    direction.style.top = "-700rem"
 }else{
   contBebidas.classList.remove('btn-group-show5')
   containerPorciones.style.top = "-1085rem"
+  direction.style.top = "-810rem"
 }})
 
 btnPorciones.addEventListener('click',(e)=>{
