@@ -896,14 +896,17 @@ btnCompra.addEventListener('click',()=>{
   }else{
     let compraARealizar = ""
     let reg =  /\\n/
+    let nuevomensaje
     carshopping.childNodes.forEach((e)=>{
-
-     compraARealizar += e.textContent + '|'
+      compraARealizar  = " hola ⏱ te hablamos https://leonardo2322.github.io/Mukata/ colombia \n tipo de servicio: {validar Con nuestro equipo} \n Estado del Pago: {no pagado} \n costos de los productos: {} \n Pedido ✍: x1 agua $15000 envia este mensaje te atenderemos enseguida"
+      nuevomensaje = compraARealizar + e.textContent + "\t" 
+      //  compraARealizar += e.textContent + '|'
     })
-    let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, "_")
-    let totalDeLaCompra = document.querySelector('#compratotal').textContent
-    let textdontSpace = newtext.replace(/\s+/g, " ") + totalDeLaCompra
-    let what =`https://api.whatsapp.com/send?phone=+573017109150&text=${textdontSpace}`
+    // let newtext = compraARealizar.replace(/(\r\n|\n|\r)/gm, "_")
+    // let totalDeLaCompra = document.querySelector('#compratotal').textContent
+    // let textdontSpace = newtext.replace(/\s+/g, " ") + totalDeLaCompra
+       let textdontSpace = nuevomensaje
+    let what =`https://api.whatsapp.com/send?phone=+573502117928&text=${nuevomensaje}`
     btnCompra.setAttribute('href',`${what}`)
     
   }
